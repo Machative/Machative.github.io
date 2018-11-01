@@ -21,3 +21,12 @@
 	    </div>
     </body>
 </html>
+<script>
+	var problems=1;
+	var problemslist = document.getElementById("problems");
+	for(var i=0;i<problems;i++){
+		var cur = document.createElement("li");
+		cur.innerText="<a href=\"../res/text/problem"+(i+1)+"/problem"+(i+1)+".java\">Problem "+(i+1)+"</a>";
+		problemslist.appendChild(cur);
+	}
+</script>
