@@ -1,35 +1,58 @@
+@font-face {
+  font-family: georgia;
+  src: url('../fonts/georgia.ttf');
+}
+body{
+  margin:0;
+  padding:0;
+  background-color: rgb(150,150,150);
+}
 .title {
-  font-family: Georgia;
+  font-family: georgia;
   font-size: 80px;
   text-align: center;
   color: rgb(66,194,244);
-  background-color: rgb(230,230,230);
 }
-
-.navigator ul {
-  display: inline-block;
-  list-style-type: none;
+.content{
+  padding: 15px;
+  background-color: white;
+  min-height: 100vh;
+}
+.navigator {
   text-align: center;
-  background-color: rgb(230,230,230);
-  padding: 5px;
+}
+.navigator ul {
+  padding-left: 100px;
+  list-style-type: none;
+  display: inline-block;
+  text-align: initial;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.navigator li {
+  float: left;
 }
 
-.navigator li {
-  color: rgb(0,0,0);
-  font-family: sans-serif;
+.navigator li a {
   font-size: 30px;
+  font-family: georgia;
+  color: rgb(255,255,255);
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+.navigator li a:hover{
+  background-color: rgb(175,175,175);
 }
 
 #interestingthingtitle{
   font-size: 50px;
   font-weight: bold;
+  padding: 5px;
 }
-#intresetingthing{
-  font-size: 25px;
-}
-
-a{
-  color: white;
-  font-family: George;
-  text-decoration:none;
+#interestingthing{
+  font-size: 20px;
+  padding-left: 5px;
 }
