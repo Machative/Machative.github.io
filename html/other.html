@@ -15,9 +15,7 @@
 	    </div>
 	    <div class="content">
 	    	<span id="problemstitle">Project Euler</span>
-		<ol id="problems">
-			<li><a href="../res/text/problem1/problem1.java">Problem 1</a></li>
-		</ol>
+		<ol id="problems"></ol>
 	    </div>
     </body>
 </html>
@@ -26,7 +24,7 @@
 	var problemslist = document.getElementById("problems");
 	for(var i=0;i<problems;i++){
 		var cur = document.createElement("li");
-		cur.innerText="<a href=\"../res/text/problem"+(i+1)+"/problem"+(i+1)+".java\">Problem "+(i+1)+"</a>";
+		cur.innerHTML="<a href=\"../res/text/problem"+(i+1)+"/problem"+(i+1)+".java\">Problem "+(i+1)+"</a>";
 		problemslist.appendChild(cur);
 	}
 </script>
