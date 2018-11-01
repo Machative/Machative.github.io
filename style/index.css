@@ -1,12 +1,15 @@
 .title {
   font-family: sans-serif;
-  font-size: 150px;
+  font-size: 80px;
   text-align: center;
-  color: orange;
+  color: rgb(66,194,244);
 }
-.navigator {
+
+.navigator ul {
+  list-style-type: none;
   text-align: center;
   background-color: rgb(200,200,200);
+  padding: 20px;
 }
 
 .navigator li {
