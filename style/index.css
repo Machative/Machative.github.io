@@ -1,0 +1,16 @@
+.title {
+  font-family: sans-serif;
+  font-size: 150px;
+  text-align: center;
+  color: orange;
+}
+.navigator {
+  text-align: center;
+  background-color: rgb(200,200,200);
+}
+
+.navigator li {
+  color: black;
+  font-family: sans-serif;
+  font-size: 20px;
+}
