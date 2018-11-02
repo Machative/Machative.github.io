@@ -20,11 +20,12 @@
     </body>
 </html>
 <script>
-	var problems=2;
+	var problems=[1,44];
+	//var problems=1;
 	var problemslist = document.getElementById("problems");
-	for(var i=0;i<problems;i++){
+	for(var i=0;i<problems.length;i++){
 		var cur = document.createElement("li");
-		cur.innerHTML="<a href=\"../res/text/problem"+(i+1)+"/problem"+(i+1)+".java\">Problem "+(i+1)+"</a>";
+		cur.innerHTML="<a href=\"../res/text/problem"+(problems[i])+"/problem"+(problems[i])+".java\">Problem "+(problems[i])+"</a>";
 		problemslist.appendChild(cur);
 	}
 </script>
