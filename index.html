@@ -2,22 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Aidan Ferry</title>
 	<link rel="stylesheet" type="text/css" href="style/index.css">
     </head>
     <body bgcolor=white>
-	    <div class="title">Aidan Ferry</div>
-	    <div class="navigator">
-	    	<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="html/about.html">About</a></li>
-		</ul>
-	    </div>
 	    <div class="content">
-	    	<span id="interestingthingtitle">Interesting thing</span>
+	    	<span id="interestingthingtitle">Beware the ides of March...</span>
 	    	<div id="interestingthing">
-	    		s will go here.
+	    		pbvtbwrh = sgdlhhpe
 	    	</div>
+			<div id = "pwddiv">
+				<form>
+					Password: (make sure you press the submit button, hitting enter on ur keyboard doesnt work)<br>
+					<input type="text" id="passwordbox">
+				</form>
+				<button id="btn" type="button">
+					Submit.
+				</button>
+				<span id="incorrect">wrong HA HA!</span>
+			</div>
 	    </div>
     </body>
 </html>
+<script>
+	var button = document.getElementById("btn");
+	var verify = function(){
+		var input = document.getElementById("passwordbox").value;
+		if(input=="schmegma"){
+			window.location.href="pigpen.html";
+		}else{
+			document.getElementById("incorrect").style.visibility="visible";
+		    input.value="";
+		}
+	}
+	button.addEventListener("click",verify);
+</script>
