@@ -56,3 +56,10 @@ body{
   font-size: 20px;
   padding-left: 5px;
 }
+#pwddiv{
+	margin: 10px;
+}
+#incorrect{
+	color: rgb(255,0,0);
+	visibility: hidden;
+}
