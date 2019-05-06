@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Toggle Lightswitch</title>
+    <title>Toggle Lightswitch testa</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -51,10 +51,13 @@
 	var button = document.getElementById("toggle");
 	var status = document.getElementById("status");
 	var toggle = function(){
+		console.log("a1");
 		if(status.innerHTML.equals("ON")){
+			console.log("b1");
 			status.innerHTML = "OFF";
 			status.style.color = "red";
 		}else{
+			console.log("b2");
 			status.innerHTML = "ON";
 			status.style.color = "green";
 		}
