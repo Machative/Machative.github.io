@@ -44,7 +44,7 @@
 
 <body>
 	<div>
-		<h1>Toggle Lightswitch t</h1>
+		<h1>Toggle Lightswitch</h1>
 		<h2 id="status">ON</h2>
 		<button id="toggle">Toggle</button>
 	</div>
@@ -52,17 +52,19 @@
 </html>
 <script>
 	var button = document.getElementById("toggle");
-	var status = document.getElementById("status");
+	var status_el = document.getElementById("status");
 	var toggle = function(){
 		console.log("a1");
-		if(status.innerHTML == "ON"){
+		if(status_el.innerHTML == "ON"){
 			console.log("b1");
-			status.innerHTML = "OFF";
-			status.style.color = "red";
+			status_el.innerHTML = "OFF";
+			status_el.style.color = "red";
 		}else{
 			console.log("b2");
-			status.innerHTML = "ON";
-			status.style.color = "green";
+			status_el.innerHTML = "ON";
+			status_el.style.color = "green";
+			
+			
 		}
 	}
 	button.addEventListener("click",toggle);
