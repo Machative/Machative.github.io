@@ -53,6 +53,12 @@
 </html>
 <script>
 	var status_el = document.getElementById("status");
+	var button = document.getElementById("toggle");
+	var light = function(val){
+		$.ajaxSetup({timeout:1000});
+		$.get("/?value=" + val + "&");
+		{Connection: close};
+	}
 	var toggle = function(){
 		if(status_el.innerHTML == "ON"){
 			status_el.innerHTML = "OFF";
@@ -63,11 +69,6 @@
 			status_el.style.color = "green";
 			light(1);
 		}
-	}
-	var light = function(val){
-		$.ajaxSetup({timeout:1000});
-		$.get("/?value=" + val + "&");
-		{Connection: close};
 	}
 	button.addEventListener("click",toggle);
 </script>
