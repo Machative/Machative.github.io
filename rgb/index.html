@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>LED Strip Control</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <h1>RGB LED Controller</h1>
+    <button class=mode id="solidBtn" onclick="switchMode('solid')">Solid</button>
+    <button class=mode id = "fadeBtn" onclick="switchMode('fade')">Fade</button>
+</div>
+<div class=modeDiv id="solid">
+    <h1>solid</h1>
+</div>
+<div class=modeDiv id="fade">
+    <h1>fade</h1>
+</div>
+</body>
+</html>
