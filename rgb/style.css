@@ -1,7 +1,5 @@
 h1 {
     color: rgb(45, 92, 247);
-    font-family: Georgia;
-    font-weight: bold;
 }
 #main{
     margin-top: -15px;
@@ -9,10 +7,13 @@ h1 {
 }
 .mode{
     background-color: rgb(45, 92, 247);
-    color: white;
+    color: #ffffff;
     font-size: 32px;
+    font-weight: 900;
     width: 150px;
     height: 50px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: gray;
 }
 .modeDiv{
     position:absolute;
@@ -21,4 +22,40 @@ h1 {
 }
 #fade{
     visibility:hidden;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#solidsubmit {
+    display: block;
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 900;
+    background-color: black;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+#fadesubmit{
+    display:block;
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+body{
+    font-family: Georgia;
+    font-weight: bold;
+}
+#fadenumber{
+    width: 40px;
+}
+#colorsDiv{
+    margin-top: 10px;
 }

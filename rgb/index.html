@@ -7,21 +7,27 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
 <div id="main">
     <h1>RGB LED Controller</h1>
     <button class=mode id="solidBtn" onclick="switchMode('solid')">Solid</button>
-    <button class=mode id = "fadeBtn" onclick="switchMode('fade')">Fade</button>
-    <input type=color>
+    <button class=mode id="fadeBtn" onclick="switchMode('fade')">Fade</button>
 </div>
 <div class=modeDiv id="solid">
-    <h1>solid</h1>
+    <h2>Mode: Solid</h2>
+    <input id="solidinput" type=color value=#000000 oninput = "onSolidInput()">
+    <input id="solidsubmit" type=submit onclick = "solidSubmit()">
 </div>
 <div class=modeDiv id="fade">
-    <h1>fade</h1>
+    <h2>Mode: Fade</h2>
+    <p># of Colors:</p>
+    <input type=number id="fadenumber" value=0>
+    <input type=submit id="fadenumsubmit" value="Ok" onclick="onFadeNumSubmit()">
+    <div id="colorsDiv"></div>
+    <input type=submit id="fadesubmit" value="Submit" onclick="fadeSubmit()">
 </div>
 </body>
+<script type="text/javascript" src="script.js"></script>
 </html>
