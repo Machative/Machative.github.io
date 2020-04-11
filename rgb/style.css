@@ -23,11 +23,14 @@ h1 {
 #fade{
     visibility:hidden;
 }
+#breathe{
+    visibility:hidden;
+}
 h2{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#solidsubmit {
+.submit{
     display: block;
     margin-top: 10px;
     width: 120px;
@@ -39,23 +42,24 @@ h2{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
-#fadesubmit{
-    display:block;
-    margin-top: 10px;
-    width: 120px;
-    height: 40px;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: black;
-    color: white;
-}
 body{
     font-family: Georgia;
     font-weight: bold;
 }
-#fadenumber{
+p{
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: -10px;
+    margin-top: -10px;
+}
+.numinput{
     width: 40px;
+    display: inline-block;
 }
 #colorsDiv{
+    margin-top: 10px;
+}
+#breathcolor{
+    display:block;
     margin-top: 10px;
 }
