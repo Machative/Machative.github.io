@@ -35,7 +35,6 @@ var onFadeNumSubmit = function(){
     }
 }
 var solidSubmit = function(){
-    console.log("test");
     $.ajaxSetup({timeout:1000});
     $.get("/?value=" + "solid" + "&");
     {Connection: close};
