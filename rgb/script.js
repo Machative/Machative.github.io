@@ -14,6 +14,12 @@ var onSolidInput = function(){
     var submit = document.getElementById("solidsubmit");
     submit.style.backgroundColor = color;
 }
+var breatheInput = document.getElementById("breathecolor");
+var onBreatheInput = function(){
+    var color = breatheInput.value;
+    var submit = document.getElementById("breathesubmit");
+    submit.style.backgroundColor = color;
+}
 var onFadeNumSubmit = function(){
     var num = document.getElementById("fadenumber").value;
     var div = document.getElementById("colorsDiv")
