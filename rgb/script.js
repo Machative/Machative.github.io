@@ -34,9 +34,19 @@ var onFadeNumSubmit = function(){
         input.style.marginRight="5px";
     }
 }
-/*var fadeSubmit = function(){
-}*/
-/*var solidSubmit = function(){
-}*/
-/*var breatheSubmit = function(){
-}*/
+var solidSubmit = function(){
+    console.log("test");
+    $.ajaxSetup({timeout:1000});
+    $.get("/?value=" + "solid" + "&");
+    {Connection: close};
+}
+var fadeSubmit = function(){
+    $.ajaxSetup({timeout:1000});
+    $.get("/?value=" + "fade" + "&");
+    {Connection: close};
+}
+var breatheSubmit = function(){
+    $.ajaxSetup({timeout:1000});
+    $.get("/?value=" + "breathe" + "&");
+    {Connection: close};
+}
