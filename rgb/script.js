@@ -36,16 +36,16 @@ var onFadeNumSubmit = function(){
 }
 var solidSubmit = function(){
     $.ajaxSetup({timeout:1000});
-    $.get("/?value=" + "solid" + "&");
+    $.get("/?mode=" + "s" + "&");
     {Connection: close};
 }
 var fadeSubmit = function(){
     $.ajaxSetup({timeout:1000});
-    $.get("/?value=" + "fade" + "&");
+    $.get("/?mode=" + "f" + "&");
     {Connection: close};
 }
 var breatheSubmit = function(){
     $.ajaxSetup({timeout:1000});
-    $.get("/?value=" + "breathe" + "&");
+    $.get("/?mode=" + "b" + "&");
     {Connection: close};
 }

@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+    <title>LED Strip Control</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    h1 {
+    color: rgb(45, 92, 247);
+    }
+    #main{
+        margin-top: -15px;
+        margin-left: 5px;
+    }
+    .mode{
+        background-color: rgb(45, 92, 247);
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 900;
+        width: 150px;
+        height: 50px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: gray;
+    }
+    .modeDiv{
+        position:absolute;
+        top: 115px;
+        left: 25px
+    }
+    #fade{
+        visibility:hidden;
+    }
+    #breathe{
+        visibility:hidden;
+    }
+    h2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .submit{
+        display: block;
+        margin-top: 10px;
+        width: 120px;
+        height: 40px;
+        font-size: 24px;
+        font-weight: 900;
+        background-color: black;
+        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+    }
+    body{
+        font-family: Georgia;
+        font-weight: bold;
+    }
+    p{
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: -10px;
+        margin-top: -10px;
+    }
+    .numinput{
+        width: 40px;
+        display: inline-block;
+    }
+    #colorsDiv{
+        margin-top: 10px;
+    }
+    #breathecolor{
+        display:block;
+        margin-top: 10px;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <h1>RGB LED Controller</h1>
+    <button class=mode id="solidBtn" onclick="switchMode('solid')">Solid</button>
+    <button class=mode id="fadeBtn" onclick="switchMode('fade')">Fade</button>
+    <button class=mode id="breatheBtn" onclick="switchMode('breathe')">Breathe</button>
+</div>
+<div class=modeDiv id="solid">
+    <h2>Mode: Solid</h2>
+    <input id="solidinput" type=color oninput = "onSolidInput()">
+    <input class=submit id="solidsubmit" type=submit onclick = "solidSubmit()">
+</div>
+<div class=modeDiv id="fade">
+    <h2>Mode: Fade</h2>
+    <p># of Colors:</p>
+    <input class=numinput type=number id="fadenumber" value=0>
+    <input type=submit id="fadenumsubmit" value="Ok" onclick="onFadeNumSubmit()">
+    <div id="colorsDiv"></div>
+    <input class=submit type=submit id="fadesubmit" value="Submit" onclick="fadeSubmit()">
+</div>
+<div class=modeDiv id="breathe">
+    <h2>Mode: Breathe</h2>
+    <p>Breath Period (s):</p>
+    <input class=numinput id="breathperiod" type=number value=0>
+    <input id="breathecolor" type=color oninput = "onBreatheInput()">
+    <input class=submit type=submit id="breathesubmit" value="Submit" onclick="breatheSubmit()">
+</div>
+</body>
+<script type="text/javascript">
+var solidBtn = document.getElementById("solidBtn");
+var fadeBtn = document.getElementById("fadeBtn");
+var modeDivs = document.getElementsByClassName("modeDiv");
+var switchMode = function(mode){
+    for (var i=0;i<modeDivs.length;i++){
+        var cur = modeDivs[i];
+        if(cur.id == mode) cur.style.visibility="visible";
+        else cur.style.visibility="hidden";
+    }
+}
+var solidInput = document.getElementById("solidinput");
+var onSolidInput = function(){
+    var color = solidInput.value;
+    var submit = document.getElementById("solidsubmit");
+    submit.style.backgroundColor = color;
+}
+var breatheInput = document.getElementById("breathecolor");
+var onBreatheInput = function(){
+    var color = breatheInput.value;
+    var submit = document.getElementById("breathesubmit");
+    submit.style.backgroundColor = color;
+}
+var onFadeNumSubmit = function(){
+    var num = document.getElementById("fadenumber").value;
+    var div = document.getElementById("colorsDiv")
+    while(div.firstChild){
+        div.removeChild(div.lastChild);
+    }
+    for(var i=0;i<num;i++){
+        var input = document.createElement("INPUT");
+        input.type="color";
+        div.appendChild(input);
+        input.style.display="inline";
+        input.style.marginRight="5px";
+    }
+}
+var solidSubmit = function(){
+    $.ajaxSetup({timeout:1000});
+    $.get("/?mode=" + "s" + "&");
+    {Connection: close};
+}
+var fadeSubmit = function(){
+    $.ajaxSetup({timeout:1000});
+    $.get("/?mode=" + "f" + "&");
+    {Connection: close};
+}
+var breatheSubmit = function(){
+    $.ajaxSetup({timeout:1000});
+    $.get("/?mode=" + "b" + "&");
+    {Connection: close};
+}
+</script>
+</html>
