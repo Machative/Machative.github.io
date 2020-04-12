@@ -143,17 +143,26 @@ var onFadeNumSubmit = function(){
 var solidSubmit = function(){
     $.ajaxSetup({timeout:1000});
     var color = solidInput.value.substring(1,7);
-    $.get("/?mode=" + "s" + "&c="+color);
+    $.get("/?mode=s&c="+color);
     {Connection: close};
 }
 var fadeSubmit = function(){
+    var num = document.getElementById("fadenumber").value;
     $.ajaxSetup({timeout:1000});
-    $.get("/?mode=" + "f" + "&");
+    var getrequest = "/?mode=f&cs="+num;
+    var colors = document.getElementById("colorsDiv").children;
+    for(var i=0;i<num;i++){
+        var curcolor = colors[i].value;
+        getrequest += "&c"+i+"="+curcolor.substring(1,7);
+    }
+    $.get(getrequest);
     {Connection: close};
 }
 var breatheSubmit = function(){
+    var color = breatheInput.value;
+    var period = document.getElementById("breathperiod").value;
     $.ajaxSetup({timeout:1000});
-    $.get("/?mode=" + "b" + "&");
+    $.get("/?mode=b&c="+color.substring(1,7)+"&p="+period);
     {Connection: close};
 }
 </script>
