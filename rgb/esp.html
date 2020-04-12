@@ -84,7 +84,7 @@
 </div>
 <div class=modeDiv id="solid">
     <h2>Mode: Solid</h2>
-    <input id="solidinput" type=color oninput = "onSolidInput()">
+    <input id="solidinput" type=color value="#000000" oninput = "onSolidInput()">
     <input class=submit id="solidsubmit" type=submit onclick = "solidSubmit()">
 </div>
 <div class=modeDiv id="fade">
@@ -142,7 +142,8 @@ var onFadeNumSubmit = function(){
 }
 var solidSubmit = function(){
     $.ajaxSetup({timeout:1000});
-    $.get("/?mode=" + "s" + "&");
+    var color = solidInput.value.substring(1,7);
+    $.get("/?mode=" + "s" + "&c="+color);
     {Connection: close};
 }
 var fadeSubmit = function(){
