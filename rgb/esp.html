@@ -162,7 +162,10 @@ var breatheSubmit = function(){
     var color = breatheInput.value;
     var period = document.getElementById("breathperiod").value;
     $.ajaxSetup({timeout:1000});
-    $.get("/?mode=b&c="+color.substring(1,7)+"&p="+period);
+    var request = "/?mode=b&c="+color.substring(1,7)+"&p=";
+    if(period<10) request+=("0"+period);
+    else request+=period;
+    $.get(request);
     {Connection: close};
 }
 </script>
