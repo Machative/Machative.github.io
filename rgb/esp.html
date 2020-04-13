@@ -60,6 +60,10 @@
         margin-bottom: -10px;
         margin-top: -10px;
     }
+    #pfadeperiod{
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
     .numinput{
         width: 40px;
         display: inline-block;
@@ -89,7 +93,9 @@
 </div>
 <div class=modeDiv id="fade">
     <h2>Mode: Fade</h2>
-    <p># of Colors:</p>
+    <p id=pfadeperiod>Time between Colors (s):</p>
+    <input class=numinput type=number value=0 id="fadeperiod">
+    <br><p># of Colors (max 9):</p>
     <input class=numinput type=number id="fadenumber" value=0>
     <input type=submit id="fadenumsubmit" value="Ok" onclick="onFadeNumSubmit()">
     <div id="colorsDiv"></div>
@@ -148,8 +154,12 @@ var solidSubmit = function(){
 }
 var fadeSubmit = function(){
     var num = document.getElementById("fadenumber").value;
+    var period = document.getElementById("fadeperiod").value;
     $.ajaxSetup({timeout:1000});
-    var getrequest = "/?mode=f&cs="+num;
+    var getrequest = "/?mode=f&p=";
+    if(period<10) getrequest += ("0" + period);
+    else getrequest+=period;
+    getrequest+=("&cs="+num);
     var colors = document.getElementById("colorsDiv").children;
     for(var i=0;i<num;i++){
         var curcolor = colors[i].value;
