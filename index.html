@@ -1,38 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/index.css">
-    </head>
-    <body bgcolor=white>
-	    <div class="content">
-	    	<span id="interestingthingtitle">Beware the ides of March...</span>
-	    	<div id="interestingthing">
-	    		pbvtbwrh = sgdlhhpe
-	    	</div>
-			<div id = "pwddiv">
-				<form>
-					Password: (make sure you press the submit button, hitting enter on ur keyboard doesnt work)<br>
-					<input type="text" id="passwordbox">
-				</form>
-				<button id="btn" type="button">
-					Submit.
-				</button>
-				<span id="incorrect">wrong HA HA!</span>
-			</div>
-	    </div>
-    </body>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<div id=header>
+    <header id=title>AP Calculus<br>¡The Polls! (2020-2021)</header>
+</div>
+<div id=body>
+    <header id=pollheader>Today's Poll:</header>
+    <header id=polltitle><br>What is your favorite flavor of ice cream?</header>
+    <div id="choices"></div>
+</div>
+</body>
 </html>
-<script>
-	var button = document.getElementById("btn");
-	var verify = function(){
-		var input = document.getElementById("passwordbox").value;
-		if(input=="schmegma"){
-			window.location.href="pigpen.html";
-		}else{
-			document.getElementById("incorrect").style.visibility="visible";
-		    input.value="";
-		}
-	}
-	button.addEventListener("click",verify);
-</script>
+<script src="index.js"></script>
